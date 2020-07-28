@@ -7,4 +7,5 @@ Simple yet powerful workflow that opens your project under the [ghq](https://git
 ## Installation
 1. download the `ghq.alfredworkflow` file
 2. open the file
-3. update "Run Script" configuraton as your need, i.e. VSCode/atom
+3. update environment variable `PATH_TO_APP` as your need, i.e. path/to/VSCode
+
