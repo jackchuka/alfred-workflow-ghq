@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>D4D13AD2-C962-40F5-A8D7-217739DF565C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>993C375D-6628-4BE1-9A32-E656287A69CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>jackchuka</string>
+	<key>description</key>
+	<string>open local repository</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ghq</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>ghq</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>PATH=$PATH:/usr/local/bin
+
+enc() {
+  echo "$1" | sed -e 's/&amp;/\&amp;amp;/g' -e 's/&gt;/\&amp;gt;/g' -e 's/&lt;/\&amp;lt;/g' -e "s/'/\&amp;apos;/g" -e 's/"/\&amp;quot;/g'
+}
+echo "&lt;?xml version='1.0'?&gt;&lt;items&gt;"
+for i in $(ghq list -p | grep -i '{query}')
+do
+   name=$(enc "$i")
+   repo=$(echo "$name" | awk -F'/' '{print $NF}')
+   echo "&lt;item uid='$name' arg='$name' valid='yes' autocomplete='$repo'&gt;&lt;title&gt;$repo&lt;/title&gt;&lt;subtitle&gt;$name&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+done
+echo "&lt;/items&gt;"
+</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>find local github repo</string>
+				<key>title</key>
+				<string>ghq...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D4D13AD2-C962-40F5-A8D7-217739DF565C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>open -a "$PATH_TO_APP" {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>993C375D-6628-4BE1-9A32-E656287A69CC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>993C375D-6628-4BE1-9A32-E656287A69CC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
+		<key>D4D13AD2-C962-40F5-A8D7-217739DF565C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>PATH_TO_APP</key>
+		<string>/Applications/IntelliJ IDEA.app</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>PATH_TO_APP</string>
+	</array>
+	<key>version</key>
+	<string></string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
