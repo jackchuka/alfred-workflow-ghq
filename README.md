@@ -1,4 +1,7 @@
 # Alfred Workflow ghq
+
+<img src="./icon.png" alt="logo" width="130"/>
+
 Simple yet powerful workflow that opens your project under the [ghq](https://github.com/motemen/ghq) folder.
 
 ## Prerequisite
