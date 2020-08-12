@@ -3,11 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.jackchuka.ghq</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>90D8C171-7151-4632-820C-82D281807D3A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>48D6BBC4-8AE2-4092-9AC6-44B190B5BE40</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>D4D13AD2-C962-40F5-A8D7-217739DF565C</key>
 		<array>
 			<dict>
@@ -21,17 +34,53 @@
 				<false/>
 			</dict>
 		</array>
+		<key>FF3FF5E6-956F-42FF-B6BD-DBEB74B41B35</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>90D8C171-7151-4632-820C-82D281807D3A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>jackchuka</string>
 	<key>description</key>
-	<string>open local repository</string>
+	<string>open local ghq repository</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>ghq</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>open -a "$PATH_TO_APP" {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>993C375D-6628-4BE1-9A32-E656287A69CC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -79,9 +128,9 @@ echo "&lt;/items&gt;"
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>find local github repo</string>
+				<string>opens local repo</string>
 				<key>title</key>
-				<string>ghq...</string>
+				<string>ghq {repo}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -97,12 +146,57 @@ echo "&lt;/items&gt;"
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ghq get</string>
+				<key>subtext</key>
+				<string>gets repo</string>
+				<key>text</key>
+				<string>ghq get {repo}</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FF3FF5E6-956F-42FF-B6BD-DBEB74B41B35</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>Done - ghq get</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>48D6BBC4-8AE2-4092-9AC6-44B190B5BE40</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>open -a "$PATH_TO_APP" {query}</string>
+				<string>PATH=/usr/local/bin:$PATH
+
+
+ghq get {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -113,7 +207,7 @@ echo "&lt;/items&gt;"
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>993C375D-6628-4BE1-9A32-E656287A69CC</string>
+			<string>90D8C171-7151-4632-820C-82D281807D3A</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -122,10 +216,24 @@ echo "&lt;/items&gt;"
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>48D6BBC4-8AE2-4092-9AC6-44B190B5BE40</key>
+		<dict>
+			<key>xpos</key>
+			<integer>445</integer>
+			<key>ypos</key>
+			<integer>155</integer>
+		</dict>
+		<key>90D8C171-7151-4632-820C-82D281807D3A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>245</integer>
+			<key>ypos</key>
+			<integer>155</integer>
+		</dict>
 		<key>993C375D-6628-4BE1-9A32-E656287A69CC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>245</integer>
 			<key>ypos</key>
 			<integer>20</integer>
 		</dict>
@@ -135,6 +243,13 @@ echo "&lt;/items&gt;"
 			<integer>40</integer>
 			<key>ypos</key>
 			<integer>20</integer>
+		</dict>
+		<key>FF3FF5E6-956F-42FF-B6BD-DBEB74B41B35</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>155</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -149,6 +264,6 @@ echo "&lt;/items&gt;"
 	<key>version</key>
 	<string></string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/jackchuka/alfred-workflow-ghq</string>
 </dict>
 </plist>
