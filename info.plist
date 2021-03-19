@@ -109,7 +109,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>PATH=$PATH:/usr/local/bin
+				<string>PATH=$PATH:/usr/local/bin:/opt/homebrew/bin
 
 enc() {
   echo "$1" | sed -e 's/&amp;/\&amp;amp;/g' -e 's/&gt;/\&amp;gt;/g' -e 's/&lt;/\&amp;lt;/g' -e "s/'/\&amp;apos;/g" -e 's/"/\&amp;quot;/g'
@@ -193,7 +193,7 @@ echo "&lt;/items&gt;"
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>PATH=/usr/local/bin:$PATH
+				<string>PATH=/usr/local/bin:/opt/homebrew/bin:$PATH
 
 
 ghq get {query}</string>
