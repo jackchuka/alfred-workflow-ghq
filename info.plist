@@ -254,12 +254,15 @@ ghq get {query}</string>
 	</dict>
 	<key>variables</key>
 	<dict>
+		<key>GHQ_ROOT</key>
+		<string></string>
 		<key>PATH_TO_APP</key>
 		<string>/Applications/IntelliJ IDEA.app</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>PATH_TO_APP</string>
+		<string>GHQ_ROOT</string>
 	</array>
 	<key>version</key>
 	<string></string>
